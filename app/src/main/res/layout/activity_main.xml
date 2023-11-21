@@ -1,29 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#E8E8E8">
 
-    <include
-        layout="@layout/item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
-    <RelativeLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimaryDark"
-        android:layout_gravity="bottom">
+        android:layout_above="@+id/button">
 
-        <include
-            layout="@layout/buttons_layout"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"/>
-    </RelativeLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:paddingRight="15dp">
 
+            <TextView
+                android:id="@+id/accumulate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text=" "
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="15dp"/>
 
+            <TextView
+                android:id="@+id/hasil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="15dp"
+                android:text="0"
+                android:textColor="@color/colorPrimaryDark"
+                />
 
-</LinearLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/button"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        layout="@layout/buttons_layout"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="15dp"/>
+
+</RelativeLayout>

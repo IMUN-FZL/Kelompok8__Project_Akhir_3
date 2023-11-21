@@ -3,5 +3,7 @@
     <style name="Base.Theme.Kelompok8__Project_Akhir_3" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:navigationBarColor">#E8E8E8</item>
+
     </style>
 </resources>
